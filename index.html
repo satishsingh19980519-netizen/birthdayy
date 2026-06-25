@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Investigator! ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: #1a0f1a;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Full Screen Background Image (AUTOMATICALLY LOADS bg_dance.png) */
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('bg_dance.png') no-repeat center center;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        /* Top Right Elegant Content Box */
+        .top-right-box {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 10;
+            max-width: 420px;
+            text-align: right;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: #ff4d6d;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .message-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Photo Frame Exact 4:3 Ratio Just Below Text */
+        .photo-container {
+            width: 100%;
+            max-width: 280px;
+            margin-left: auto;
+            border-radius: 10px;
+            border: 3px solid #ff4d6d;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            aspect-ratio: 4 / 3;
+            background: #222;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            color: #ff4d6d;
+            font-size: 20px;
+            animation: float 6s linear infinite;
+            opacity: 0;
+            bottom: -10px;
+            z-index: 5;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Layer -->
+    <div class="bg-overlay"></div>
+
+    <!-- Top Right Corner Card Content -->
+    <div class="top-right-box">
+        <h1>Happy Birthday to my favorite thief! 🎂🕵️‍♀️</h1>
+        
+        <div class="message-text">
+            Let’s look at your record since 2021: First, you acted like my bestie while secretly planning to trap me in a relationship🐍. Then, you claimed the title of my one and only friend just to monopolize my secrets. And now? You literally rob my branded T-shirts🥷 every time we meet, you host a KFC party just to eat all the chicken yourself & left nothing for me😭, and pass off 3rd copy items as luxury gifts! Your gifting skills are questionable.<br><br>
+            Your trust issues are exhausting and dangerously irritating, but since you hold all my secrets, I guess I'm stuck with you. Stop doubting your innocent POOR DADDY🕺 and have an amazing day in Diphu! Love you, my beautiful investigator!
+        </div>
+
+        <!-- Real 4:3 Photo Frame (AUTOMATICALLY LOADS couple_pic.jpg) -->
+        <div class="photo-container">
+            <img src="couple_pic.jpg" alt="Us">
+        </div>
+    </div>
+
+    <!-- GAANA AUTOMATICALLY LOADS perfect.mp3 FROM YOUR DESKTOP -->
+    <audio id="bg-music" loop>
+        <source src="perfect.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Music Play on first click anywhere
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('bg-music');
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+
+        // Floating Hearts Generator
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = (Math.random() * 40 + 55) + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            heart.style.fontSize = Math.random() * 10 + 15 + 'px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => { heart.remove(); }, 6000);
+        }
+        setInterval(createHeart, 600);
+    </script>
+</body>
+</html>
